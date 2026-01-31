@@ -56,7 +56,7 @@ const connect = async (options = {}) => {
 	state.configuration = options;
 	state.client = await doOrRetry(async () => await cdp(state.configuration));
 
-	state.isChrome = !!state.client.Network;
+	state.isChrome = !!state.client.Animation;
 
 	enableListeners();
 	enableDomains();
